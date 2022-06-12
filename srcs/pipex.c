@@ -9,7 +9,12 @@
 
 int birth_first(t_pipex *pipex, char *argv[])
 {
+    int p_id;
+
+    p_id = fork();
+    if 
     pipex->in_fd = open(pipex->infile, O_RDONLY);
+
 }
 int    birth_children(t_pipex *pipex, int arg_count, char *argv[])
 {
@@ -44,21 +49,4 @@ int main(int argc, char *argv[])
     pipex->outfile = argv[argc - 1];
     if (pipe(pipex->pipes) == -1)
         exit(pipe_error());
-    // pid = fork();
-    // if (pid == 0)
-    // {
-    //     path = find_paths(argv[2]);
-    //     printf("%s\n", path);
-    // }
-    // else if (pid > 0)
-    //     printf("This is the parent!\n");
-    // if (path)
-    //     free(path);
-    // while (*envp)
-    // {
-    //     printf("%s\n", *envp);
-    //     envp++;
-    // }
-   // system("leaks pipex");
-   // printf("%s\n%s\n",cmd[0],cmd[1]);
 }
