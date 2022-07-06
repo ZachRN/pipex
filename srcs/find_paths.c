@@ -54,7 +54,7 @@ static char    *find_possible_path(char **path, char *command)
 
     possible_env_path = NULL;
     if (!(possible_env_path = loop_through_env(path, command)))
-        error_out("Error finding paths\n");
+        error_out("Command not found\n");
     if (path)
         free_paths(path);
     return (possible_env_path);
