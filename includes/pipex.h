@@ -6,9 +6,12 @@ typedef struct s_pipex {
     char *outfile;
     int pipes[2];
     char    **cmd_args;
-    char    **path;
+    char    *path;
     int     in_fd;
     int     out_fd;
 }               t_pipex;
+
+# define STDIN 0
+# define STDOUT 1
 
 #endif

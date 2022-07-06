@@ -1,26 +1,17 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int arguement_error()
+static int ft_strlen(const char *str)
 {
-    write(1, "Not Enough Arguements\n", 22);
-    return (-1);
-}
+    unsigned int i;
 
-char    error_paths()
-{
-    write(1, "Error something has gone wrong with the paths\n", 46);
-    return (NULL);
+    i = 0;
+    while (str[i])
+        i++;
+    return(i);
 }
-
-int pipe_error()
+void error_out(const char *str)
 {
-    write(1, "Error setting up the Pipes\n", 27);
-    return (-1);
-}
-
-int command_error()
-{
-    write(1, "Error splitting the command arguements\n", 39);
-    return (-1);
+    write(STDERR_FILENO, str, ft_strlen(str));
+    exit(EXIT_FAILURE);
 }
