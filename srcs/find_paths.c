@@ -6,7 +6,7 @@
 /*   By: znajda <znajda@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:50:38 by znajda        #+#    #+#                 */
-/*   Updated: 2022/07/06 15:51:46 by znajda        ########   odam.nl         */
+/*   Updated: 2022/07/07 15:59:34 by znajda        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static	char	*loop_through_env(char **path, char *command)
 				free(store_command);
 			return (possible_env_path);
 		}
-		else
+		else if (possible_env_path)
 			free(possible_env_path);
 		i++;
 		possible_env_path = NULL;

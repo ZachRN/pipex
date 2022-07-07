@@ -6,7 +6,7 @@
 /*   By: znajda <znajda@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:37:51 by znajda        #+#    #+#                 */
-/*   Updated: 2022/07/06 15:37:53 by znajda        ########   odam.nl         */
+/*   Updated: 2022/07/07 17:47:04 by znajda        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,33 @@ int	ft_strncmp(const char *s1, const char *s2, size_t len)
 	if (i < len)
 		return (a[i] - b[i]);
 	return (0);
+}
+
+static void	ft_bzero(void *s, size_t n)
+{
+	char	*str;
+
+	str = (char *)s;
+	while (n)
+	{
+		*str = '\0';
+		str++;
+		n--;
+	}
+}
+
+void	*ft_calloc(size_t nmeb, size_t size)
+{
+	void	*memory;
+
+	if (nmeb == 0 || size == 0)
+	{
+		nmeb = 1;
+		size = 1;
+	}
+	memory = malloc(nmeb * size);
+	if (!memory)
+		return (NULL);
+	ft_bzero(memory, (nmeb * size));
+	return (memory);
 }

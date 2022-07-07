@@ -6,7 +6,7 @@
 /*   By: znajda <znajda@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:54:48 by znajda        #+#    #+#                 */
-/*   Updated: 2022/07/06 15:55:07 by znajda        ########   odam.nl         */
+/*   Updated: 2022/07/07 17:45:15 by znajda        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@
 /*Used to compare Strings to see if they are the same up to a certain point
 currently being used to determine the path= variable*/
 int		ft_strncmp(const char *s1, const char *s2, size_t len);
+
+void	*ft_calloc(size_t nmeb, size_t size);
 
 #endif

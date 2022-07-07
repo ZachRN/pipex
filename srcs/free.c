@@ -6,7 +6,7 @@
 /*   By: znajda <znajda@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:47:11 by znajda        #+#    #+#                 */
-/*   Updated: 2022/07/06 15:47:11 by znajda        ########   odam.nl         */
+/*   Updated: 2022/07/07 16:01:29 by znajda        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	free_paths(char *paths[])
 		return ;
 	while (paths[i])
 	{
-		free(paths[i]);
+		if (paths[i])
+			free(paths[i]);
 		i++;
 	}
-	free(paths);
+	if (paths)
+		free(paths);
 	paths = NULL;
 }
