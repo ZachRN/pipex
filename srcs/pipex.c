@@ -6,7 +6,7 @@
 /*   By: znajda <znajda@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:38:17 by znajda        #+#    #+#                 */
-/*   Updated: 2022/07/06 18:24:08 by znajda        ########   odam.nl         */
+/*   Updated: 2022/07/07 12:19:17 by znajda        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ static	void	start_children(t_pipex *pipex, int arg_count, char *argv[])
 		cmd_count++;
 	}
 	final_process(pipex, arg_count, argv);
-	while (wait(NULL) > 0);
+	while (wait(NULL) > 0)
+		continue ;
 }
 
 int	main(int argc, char *argv[])

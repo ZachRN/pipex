@@ -39,4 +39,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re build_dir
+bonus: all
+
+.PHONY: all clean fclean re build_dir bonus
